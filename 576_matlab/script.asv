@@ -18,9 +18,8 @@ newvideo = false;
 % generate the folder images
 if ~exist(frame_path, 'dir')
     newvideo = true;
-    mkdir(frame_path);
 end
-
+mkdir(frame_path);
 %moving to the folder of the images:
 cd(frame_path);
 %reading the frames into a huge cell array:
@@ -57,10 +56,10 @@ H_k_to_ref = struct2cell(load([frame_path, '_H_to_ref.mat']));    % from the scr
 H_k_to_ref = H_k_to_ref{1};
 
 % generate back panorama and frame by frame iamge out of that panorama
-% back_builder;
+back_builder;
 
 % generate foreground image
-% generate_fore_img;
+generate_fore_img;
 
 % % % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % Task!!! % % % % % % % % %
@@ -73,7 +72,7 @@ H_k_to_ref = H_k_to_ref{1};
 % create_panorama_with_static_foreground;
 % use created foreground images and background panorama to create a moving
 % forground video for task 2
-% create_panorama_with_moving_foreground;
+create_panorama_with_moving_foreground;
 % use result from back_builder, the created background images to create a
 % video for task 3
 create_plain_background_video;
